@@ -222,20 +222,6 @@ def eigenstates_animation(
     )
     fig.update_xaxes(title_text=r"$\large{x / L}$")
 
-    ## Energies plot - for testing purposes - TODO: proper energies plot
-    # fig_energies, ax = plt.subplots()
-    # plt.hlines(1,0,np.max(E_n))
-    # plt.xlim(0,np.max(E_n))
-    # plt.ylim(0.5,1.5)
-    # y = np.ones_like(E_n)
-    # plt.plot(E_n,y,'|',ms = 40, label='$E_n \cdot m L^2 / \hbar^2$')
-    # plt.axis('off')
-    ## Analytical Energies for infinite well
-    # E_n_ana = [np.pi**2 * n**2 / 2 for n in range(1, n_max+2)]
-    # plt.plot(E_n_ana,y,'|',ms = 20, label='$E_{n, analytisch} \cdot m L^2 / \hbar^2$')
-    # plt.legend()
-    # plt.show()
-
     return fig
 
 
@@ -527,11 +513,9 @@ def toggle_offcanvas(n1, is_open):
         return not is_open
     return is_open
 
-app.run(debug=True)
+app.run(debug=False)
 
 # TODO:
-# - more examples e.g. hydrogen soft clipping -1e3 / (10*abs(x-0.5) + 0.1)
-# - download button spinner
 # - input check does not check if functions are available! - any text with () at end is recognized as function but not invalidated - include try lambdify i.e. check if fails
 # - validate n input!
 # - shift phi height on energy axis
