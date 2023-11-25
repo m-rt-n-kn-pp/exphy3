@@ -405,10 +405,11 @@ app.layout = dbc.Container(
     dash.Input("dropdown-menu-item-3", "n_clicks"),
     dash.Input("dropdown-menu-item-4", "n_clicks"),
     dash.Input("dropdown-menu-item-5", "n_clicks"),
+    dash.Input("dropdown-menu-item-6", "n_clicks"),
     dash.Input("dropdown-menu-item-clear", "n_clicks"),
     prevent_initial_call=True,
 )
-def on_button_click(n1, n2, n3, n4, n5, n_clear):
+def on_button_click(n1, n2, n3, n4, n5, n6, n_clear):
     ctx = dash.callback_context
 
     if not ctx.triggered:
