@@ -187,26 +187,26 @@ def eigenstates_animation(
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=0.94),
     )
 
-    range = [np.min(phi_n), np.max(phi_n)]
-    padding = (range[1] - range[0]) * 0.05
-    range[0] -= padding
-    range[1] += padding
+    phi_range = [np.min(phi_n), np.max(phi_n)]
+    padding = (phi_range[1] - phi_range[0]) * 0.05
+    phi_range[0] -= padding
+    phi_range[1] += padding
 
     padding_potential = (border_box[1] - border_box[0]) * 0.05
     border_box[0] -= padding_potential
     border_box[1] += padding_potential
-
-    for i, f in enumerate(fig.frames[1:]):  # first frame is potential
-        E_i = E_n[i]
-        if E_i > 0:
-            border_box_adjust = [border_box[0], E_i + border_box[1]]
-        else:
-            border_box_adjust = [E_i + border_box[0], border_box[1]]
-        f.layout.update(yaxis=dict(range=border_box_adjust, secondary_y=True))
+    
+    #for i, f in enumerate(fig.frames[1:]):  # first frame is potential
+    #    E_i = E_n[i]
+    #    if E_i > 0:
+    #        border_box_adjust = [border_box[0], E_i + border_box[1]]
+    #    else:
+    #        border_box_adjust = [E_i + border_box[0], border_box[1]]
+    #    f.layout.update(yaxis=dict(range=border_box_adjust, secondary_y=True))
 
     fig.update_yaxes(
         title_text=r"$\large{\phi_n}$",
-        range=range,
+        range=phi_range,
         showgrid=False,
         title_font=dict(color="rgb(17, 137, 113)"),
         tickfont=dict(color="rgb(17, 137, 113)"),
